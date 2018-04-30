@@ -1,0 +1,27 @@
+{
+  "name": "almundorestapi",
+  "version": "1.0.0",
+  "description": "Rest API service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumelio/AlMundoApp.git"
+  },
+  "keywords": [
+    "Node",
+    "JSON",
+    "server"
+  ],
+  "author": "Freddy.Lemus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumelio/AlMundoApp/issues"
+  },
+  "homepage": "https://github.com/sumelio/AlMundoApp#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
