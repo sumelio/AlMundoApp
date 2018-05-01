@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 
-var fetchNotes = () => {
+var fetchHotels = () => {
   try {
     var hotelsObject = fs.readFileSync('./data/data.json');
     return JSON.parse(hotelsObject);
@@ -11,19 +11,22 @@ var fetchNotes = () => {
   }
 };
 
-var getAllHotels = () => {
-	console.log('Get all hotels from file');
-    return hotels;
-}
+var getHotelByNameAndStars = (name, stars) => {
+  var hotels = fetchHotels();
+  var filteredHotels;
 
-var getHotelByName = (name) => {
-  var hotels = fetchNotes();
-  var filteredHotels = hotels.filter((hotel) => hotel.name === name);
-  console.log(filteredHotels)
-  return filteredHotels[0];
+  if(name && stars) {
+       filteredHotels = hotels.filter((hotel) => hotel.name.toUpperCase().includes(name.toUpperCase()) 
+                                             && hotel.stars == stars );
+  } else if(name) {
+      filteredHotels = hotels.filter((hotel) => hotel.name.toUpperCase().includes(name.toUpperCase()) );
+  } else {
+      filteredHotels = hotels;
+  }
+
+  return filteredHotels;
 };
 
 module.exports = {
-	getAllHotels,
-	getHotelByName
+  getHotelByNameAndStars
 }
