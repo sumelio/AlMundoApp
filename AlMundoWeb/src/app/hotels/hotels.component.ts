@@ -9,9 +9,13 @@ export class HotelsComponent implements OnInit {
 
   findHotelName;
   name;
-  hotels: ['hotel 1', 'hotel 2'];
+  hotelList = ['hotel 1', 'hotel 2'];
 
-  constructor() { }
+  constructor() {
+
+    console.log('hotelList ' + this.hotelList)
+
+   }
 
   ngOnInit() {
   }

@@ -1,8 +1,9 @@
-<p>
 
-    <input  type="text"  (keyup)="onKeyFindHotelByName()" [(ngModel)]="findHotelName" >  
-</p>
-<hotel></hotel>
-<hotel></hotel>
-<hotel></hotel>
-<hotel></hotel>
+<div class="row">
+    <div class="col-xs-6 form-group">
+        <input  type="text"  (keyup)="onKeyFindHotelByName()" [(ngModel)]="findHotelName" >  
+    </div>
+    <div class="col-xs-6 form-group">
+        {{ hotels }}
+        <hotel *ngFor="let item of hotelList"></hotel>
+    </div>
