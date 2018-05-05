@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelsService } from '../hotels.services';
 
 @Component({
   selector: '[hotels]',
@@ -11,7 +12,7 @@ export class HotelsComponent implements OnInit {
   name;
   hotelList = ['hotel 1', 'hotel 2'];
 
-  constructor() {
+  constructor(private hotelsService: HotelsService) {
 
     console.log('hotelList ' + this.hotelList)
 
@@ -27,6 +28,18 @@ export class HotelsComponent implements OnInit {
 
   onKeyFindHotelByName() {
     console.log(`findHotelName ${this.findHotelName}` )
+
+    this.hotelsService.getHotels(this.hotelList, this.findHotelName, null)
+    .subscribe(
+      (response) => {
+        console.log("response="+response)
+
+        this.hotelList = response.json();
+      }
+      ,
+      (error)  => console.log("error=" + error)
+    );
+    
   }
 
 

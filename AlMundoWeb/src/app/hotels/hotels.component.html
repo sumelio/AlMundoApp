@@ -5,5 +5,11 @@
     </div>
     <div class="col-xs-6 form-group">
         {{ hotels }}
-        <hotel *ngFor="let item of hotelList"></hotel>
+       <!-- <hotel *ngFor="let item of hotelList"></hotel> -->
+
+       <ul  *ngFor="let item of hotelList">
+       <p>{{ 'Hotel' }} with ID {{ item.name }} is {{ item }}</p>
+       <img src="../../assets/images/hotels/2a5bb415_b.jpg" >
+
+      </ul>
     </div>
