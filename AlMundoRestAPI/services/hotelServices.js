@@ -12,20 +12,16 @@ var fetchHotels = () => {
 };
 
 var getHotelByNameAndStars = (name, stars) => {
-  var hotels = fetchHotels();
-  var filteredHotels;
-
-  if(name && stars) {
-       filteredHotels = hotels.filter((hotel) => hotel.name.toUpperCase().stars(name.toUpperCase()) 
-                                             && hotel.stars == stars );
-  } else if(name) {
-      filteredHotels = hotels.filter((hotel) => hotel.name.toUpperCase().stars(name.toUpperCase()) );
-  } else {
-      filteredHotels = hotels;
-  }
-
-  return filteredHotels;
+  return fetchHotels().filter(  hotel => 
+                                  (     (isEmpty(name) || hotel.name.toUpperCase().startsWith(name.toUpperCase()) ) 
+                                    &&  (isEmpty(stars) || hotel.stars == stars ) 
+                                  ) 
+                        );
 };
+
+function isEmpty(param) {
+  return param = '' || param  == 'null' ;
+}
 
 module.exports = {
   getHotelByNameAndStars

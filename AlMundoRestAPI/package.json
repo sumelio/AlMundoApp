@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/sumelio/AlMundoApp#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "cors": "^2.8.4"
   }
 }
