@@ -16,10 +16,10 @@ var getHotelByNameAndStars = (name, stars) => {
   var filteredHotels;
 
   if(name && stars) {
-       filteredHotels = hotels.filter((hotel) => hotel.name.toUpperCase().includes(name.toUpperCase()) 
+       filteredHotels = hotels.filter((hotel) => hotel.name.toUpperCase().stars(name.toUpperCase()) 
                                              && hotel.stars == stars );
   } else if(name) {
-      filteredHotels = hotels.filter((hotel) => hotel.name.toUpperCase().includes(name.toUpperCase()) );
+      filteredHotels = hotels.filter((hotel) => hotel.name.toUpperCase().stars(name.toUpperCase()) );
   } else {
       filteredHotels = hotels;
   }
