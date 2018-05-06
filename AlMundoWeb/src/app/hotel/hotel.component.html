@@ -1,16 +1,27 @@
-<div class="container">
+<span class="margen-hotel">
     <div class="row">
-        <div class="col-xs-4">
-            <div class="row">
-                <img src="{{ hotelItem.image }}">
+            <div class="col-xs-4">
+                <div class="row">
+                    <img src="{{ hotelItem.image }}" class="imageHotel">
+                </div>
+            </div>
+            <div class="col-xs-5">
+                <div class="row">
+                    {{ hotelItem.name }}
+                </div>
+                <div class="row">
+                    <span *ngFor="let itemStar of stars" class="fa fa-star checked spanStar"></span>
+                </div>
+                <div class="row">
+                    {{ hotelItem.amenities }}
+                </div>
+            </div>
+            <div class="col-xs-3">
+                    {{ hotelItem.price }}
             </div>
         </div>
-        <div class="col-xs-8">
-                <span *ngFor="let itemStar of stars" class="fa fa-star checked spanStar"></span>
-
-        </div>
-    </div>
-</div>
+    
+</span>
 <!-- 
 <div class="container">
     <div class="row">
