@@ -1,4 +1,31 @@
-<h1>Simple component hotel</h1>
-<br>
-<p>{{ 'Hotel' }} with ID {{ id }} is {{ name }}</p>
-<img src="../../assets/images/hotels/2a5bb415_b.jpg" >
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="row">
+                <img src="{{ hotelItem.image }}">
+            </div>
+        </div>
+        <div class="col-xs-8">
+                <span *ngFor="let itemStar of stars" class="fa fa-star checked spanStar"></span>
+
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <p>{{ 'Hotel' }} with ID {{ hotelItem.stars }} is {{ hotelItem.name }}</p>
+            <span *ngFor="let itemStar of stars" class="fa fa-star checked spanStar"></span>
+            <img src="{{ hotelItem.image }}">
+
+        </div>
+        <div class="col-sm">
+            One of three columns
+        </div>
+        <div class="col-sm">
+            One of three columns
+        </div>
+    </div>
+</div>
+-->

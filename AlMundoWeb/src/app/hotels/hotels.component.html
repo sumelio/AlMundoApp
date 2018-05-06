@@ -1,15 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="row">
+                <input type="text" (keyup)="onKeyFindHotelByName()" [(ngModel)]="findHotelName">
+            </div>
+            <div class="row">
+                <span class="fa fa-star checkFilter"></span>
+                <span class="starFilter">Estrellas</span>
+            </div>
 
-<div class="row">
-    <div class="col-xs-6 form-group">
-        <input  type="text"  (keyup)="onKeyFindHotelByName()" [(ngModel)]="findHotelName" >  
+            <div class="row">
+                <ul class="padding-left0">
+                    <li>
+                        <input type="checkbox" (change)="checkAllStars($event.target.checked)" [(ngModel)]="checkedAll" [checked]="checkedAll">
+                        <span class="bold">Todas las estrellas</span>
+                    </li>
+                    <li *ngFor="let item of startslList">
+                        <input id={{item.stars.length}} type="checkbox" value="{{item.id}}" (change)="checkStars($event.target.value, $event.target.checked)"
+                            [checked]=" item.checked == true ">
+                        <span *ngFor="let itemStar of item.stars" class="fa fa-star checked spanStar"></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-xs-9 margen-hotel"><hotel *ngFor="let item of hotelList" [hotelItem]="item"></hotel></div>
     </div>
-    <div class="col-xs-6 form-group">
-        {{ hotels }}
-       <!-- <hotel *ngFor="let item of hotelList"></hotel> -->
 
-       <ul  *ngFor="let item of hotelList">
-       <p>{{ 'Hotel' }} with ID {{ item.name }} is {{ item }}</p>
-       <img src="../../assets/images/hotels/2a5bb415_b.jpg" >
+</div>
 
-      </ul>
+<!--
+<div class="container">
+        <div class="col-xs-6 form-group">
+            <div class="row">
+                <input type="text" (keyup)="onKeyFindHotelByName()" [(ngModel)]="findHotelName">
+            </div>
+            <div class="row">
+                <span class="fa fa-star checkFilter"></span>
+                <span class="starFilter">Estrellas</span>
+            </div>
+    
+            <div class="row">
+                <ul class="padding-left0">
+                    <li>
+                        <input type="checkbox" (change)="checkAllStars($event.target.checked)" [(ngModel)]="checkedAll" [checked]="checkedAll"   >
+                        <span class="bold">Todas las estrellas</span>
+                    </li>
+                    <li *ngFor="let item of startslList">
+                        <input id={{item.stars.length}} 
+                                type="checkbox" value="{{item.id}}" (change)="checkStars($event.target.value, $event.target.checked)" [checked]=" item.checked == true "  >
+                        <span *ngFor="let itemStar of item.stars" class="fa fa-star checked spanStar"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="col-xs-6 form-group">
+            <hotel *ngFor="let item of hotelList" [hotelItem]="item"></hotel>
+        </div>
     </div>
+
+-->
