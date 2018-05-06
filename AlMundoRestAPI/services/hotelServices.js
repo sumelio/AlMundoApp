@@ -13,14 +13,14 @@ var fetchHotels = () => {
 
 var getHotelByNameAndStars = (name, stars) => {
   return fetchHotels().filter(  hotel => 
-                                  (     (isEmpty(name) || hotel.name.toUpperCase().startsWith(name.toUpperCase()) ) 
-                                    &&  (isEmpty(stars) || hotel.stars == stars ) 
+                                  (     ( isEmpty(name)  || hotel.name.toUpperCase().startsWith(name.toUpperCase()) ) 
+                                    &&  ( isEmpty(stars) || (stars).includes(hotel.stars) ) 
                                   ) 
                         );
 };
 
 function isEmpty(param) {
-  return param = '' || param  == 'null' ;
+  return param == '' || param  == 'null'|| param  == 'undefined' ;
 }
 
 module.exports = {
