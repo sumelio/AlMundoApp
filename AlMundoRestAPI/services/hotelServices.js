@@ -20,7 +20,7 @@ var getHotelByNameAndStars = (name, stars) => {
 };
 
 function isEmpty(param) {
-  return param == '' || param  == 'null'|| param  == 'undefined' ;
+  return param == undefined || param == '' || param  == 'null'|| param  == 'undefined' ;
 }
 
 module.exports = {
