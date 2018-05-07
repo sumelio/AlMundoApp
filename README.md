@@ -11,8 +11,8 @@ Esta aplicación esta compuesta de dos componentes:
 ### Requisitos de instalación
 
 - Tener instalado:
-1. nodeJS en la versión: v8.11.1
-2. CLI de Angular version 5.
+1. nodeJS en la versión: v8.11.1 o superior.
+2. Tene instalado npm.
 
 ### AlMundoRestAPI
 Para subir el servidor en NodeJS realizar los siguientes pasos:
@@ -43,6 +43,45 @@ En la consola debe aparecer este mensaje:
 
 Server AlMundoAPI is up on port 3000 ....
 
+```
+
+Ejemplo invocación servicio Rest
+
+http://localhost:3000/almundo/hotels?name=L&stars='2,5'
+
+Respuesta:
+
+```json 
+[
+   {
+      "id":"266914",
+      "name":"LYNIK La Casa de Blanca",
+      "stars":2,
+      "price":676.59,
+      "image":"4846837_5_b.jpg",
+      "amenities":[
+         "deep-soaking-bathtub",
+         "beach-pool-facilities",
+         "bathtub",
+         "separate-bredroom",
+         "kitchen-facilities"
+      ]
+   },
+   {
+      "id":"266900",
+      "name":"La Casa Nostra Hostel",
+      "stars":2,
+      "price":1228.5,
+      "image":"2537805_1_b.jpg",
+      "amenities":[
+         "kitchen-facilities",
+         "fitness-center",
+         "garden",
+         "nightclub",
+         "deep-soaking-bathtub"
+      ]
+   }
+]
 ```
 
 ### AlMundoWeb
