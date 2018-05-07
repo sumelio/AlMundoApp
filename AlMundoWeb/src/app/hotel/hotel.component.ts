@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'hotel',
-    templateUrl: './hotel.component.html'
+    templateUrl: './hotel.component.html',
+    styleUrls: ['./hotel.component.css']
 })
 export class HotelComponent implements OnInit {
  id: number = 10;

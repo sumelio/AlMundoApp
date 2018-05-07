@@ -1,0 +1,59 @@
+.starFilter {
+    color: #2F76B1;
+    font-weight: bold;
+    padding-left: 1px;
+    font-size: smaller;
+}
+
+
+.checkFilter {
+    color: #2F76B1; 
+    font-size: smaller;
+}
+
+.padding-5 {
+    padding: 8px 10px 15px 5px;
+}
+
+.button {
+    background-color: #192877;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: small;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-weight: bold;
+    box-shadow: 0 1px black;
+}
+
+
+.hotelByName {
+    font-size: small;
+    font-weight: normal;
+    padding: 5px 10px;
+    height: 30px;   
+    max-width: 140px;
+    margin-left: 8px; 
+    margin-right: 10px;    
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.bold-smaller {
+    font-weight: bold;
+    font-size: smaller;
+}
+
+.caretUp {
+    padding-left: 10px;
+    color:  #2F76B1; 
+    font-size: medium;
+    
+}
