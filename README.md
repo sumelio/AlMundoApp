@@ -35,7 +35,7 @@ $npm install
 $npm start
 ```
 
-En la consola debe aparece este mensaje:
+En la consola debe aparecer este mensaje:
 
 ```bash 
 > almundorestapi@1.0.0 start .../AlMundoRestAPI
@@ -48,7 +48,7 @@ Server AlMundoAPI is up on port 3000 ....
 ### AlMundoWeb
 Para subir la aplicación en Angular realizar los siguientes pasos:
 
-1. Ingresar a la carpeta AlMundoRestAPI
+1. Ingresar a la carpeta AlMundoWeb
 
 ```bash 
 /AlMundoWeb
@@ -59,7 +59,7 @@ Para subir la aplicación en Angular realizar los siguientes pasos:
 $npm install
 ```
 
-3. Iniciar el servidor express de nodeJS:
+3. Iniciar el servidor ng serve:
 
 ```bash 
 $npm start
