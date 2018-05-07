@@ -5,7 +5,7 @@ Esta aplicación esta compuesta de dos componentes:
 2. AlMundoWeb: Es un proyecto en Angular 5 que contiene toda la parte de frontend de la aplicación y tiene tres componente:
 - **Componente Hotels** : El cual se comunica con el **HotelService** para consultar el RestAPI (*AlMundoRestAPI*) y luego realiza el pintado de cada uno de los componentes Hotel.
 - **Componente Hotel**: Contiene el detalle del hotel, es decir, una imagen, nombre cantidad de estreñas, amenities y precio.
-- **Component Filter**: Contiene el html que permite realizar la búqueda o filtrado del listado de hoteles por nombre y cantidad de estreñas del hotel.
+- **Componente Filter**: Contiene el html que permite realizar la búqueda o filtrado del listado de hoteles por nombre y cantidad de estrllas del hotel.
 
 ##¿Como ejecutar esta aplicación?
 ### Requisitos de instalación
