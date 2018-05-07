@@ -59,11 +59,13 @@ $npm install
 $npm start
 ```
 
-En la consola debe aparece este mensaje:
+En la consola debe aparecer este mensaje:
 
 ```bash 
-AlMundoWeb
+> al-mundo-web@0.0.0 start /home/..../AlMundoWeb
 > ng serve
+
+
 ....
 ....
 chunk {styles} styles.bundle.js (styles) 365 kB [initial] [rendered]
