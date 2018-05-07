@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HotelsService } from '../hotels.services';
 
 @Component({
-  selector: '[hotels]',
+  selector: 'hotels',
   templateUrl: './hotels.component.html',
   styleUrls: ['./hotels.component.css']
 })

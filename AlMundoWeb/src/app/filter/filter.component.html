@@ -1,50 +1,60 @@
-<div class="col-xs-3">
-    <div class="filterBorder marginTop">
-        <span>Filtros</span>
-    </div>
-    <div class="filterBorder">
-        <div class="row padding-5">
-            <div class="col-xs-10">
-                <span class="fa fa-search checkFilter"></span>
-                <span class="starFilter"> Nombre del hotel</span>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="filterBorder marginTop">
+            <span>Filtros</span>
+        </div>
+        <div class="filterBorder">
+            <div class="row padding-5">
+                <div class="col-xs-10">
+                    <span class="fa fa-search checkFilter"></span>
+                    <span class="starFilter"> Nombre del hotel</span>
+                </div>
+                <div class="col-xs-1">
+                    <span *ngIf=" showFilterName == false ">
+                        <i class="fa fa-caret-left caretUp" (click)="toggleFilterName()"></i>
+                    </span>
+                    <span *ngIf=" showFilterName == true ">
+                        <i class="fa fa-caret-up caretUp" (click)="toggleFilterName()"></i>
+                    </span>
+                </div>
             </div>
-            <div class="col-xs-1">
-                <span *ngIf=" showFilterName == false " > <i class="fa fa-caret-left caretUp" (click)="toggleFilterName()"></i> </span>
-                <span *ngIf=" showFilterName == true " > <i class="fa fa-caret-up caretUp" (click)="toggleFilterName()"></i> </span>
+            <div *ngIf=" showFilterName == true " class="row padding-5">
+                <input type="text" class="hotelByName" (keyup)="onKeyFindHotelByName()"  [(ngModel)]="findHotelName" placeholder="Ingrese el nombre del hotel">
+                <input type="button" class="button" (click)="onKeyFindHotelByName()" value="Aceptar">
             </div>
         </div>
-        <div  *ngIf=" showFilterName == true "  class="row">
-            <input type="text" class="hotelByName" [(ngModel)]="findHotelName" placeholder="Ingrese el nombre del hotel">
-            <input type="button" class="button" (click)="onKeyFindHotelByName()" value="Aceptar">
-        </div>
-    </div>
-    <div class="filterBorder">
-        <div class="row padding-5">
-            <div class="col-xs-10">
-                <span class="fa fa-star checkFilter"></span>
-                <span class="starFilter">Estrellas</span>
+        <div class="filterBorder">
+            <div class="row padding-5">
+                <div class="col-xs-10">
+                    <span class="fa fa-star checkFilter"></span>
+                    <span class="starFilter">Estrellas</span>
+                </div>
+                <div class="col-xs-1">
+                    <span *ngIf=" showFilterStar == false ">
+                        <i class="fa fa-caret-left caretUp" (click)="toggleFilterStar()"></i>
+                    </span>
+                    <span *ngIf=" showFilterStar == true ">
+                        <i class="fa fa-caret-up caretUp" (click)="toggleFilterStar()"></i>
+                    </span>
+                </div>
             </div>
-            <div class="col-xs-1">
-                    <span *ngIf=" showFilterStar == false " > <i class="fa fa-caret-left caretUp" (click)="toggleFilterStar()"></i> </span>
-                    <span *ngIf=" showFilterStar == true " > <i class="fa fa-caret-up caretUp" (click)="toggleFilterStar()"></i> </span>
-            </div>
-        </div>
-        <div  *ngIf=" showFilterStar == true "  class="row">
-            <div class="col-xs-12">
-                <ul class="padding-left0">
+            <div *ngIf=" showFilterStar == true " class="row">
+                <div class="col-xs-12">
+                    <ul class="padding-left0">
 
-                    <li>
-                        <input type="checkbox" (change)="checkAllStars($event.target.checked)" [(ngModel)]="checkedAll" [checked]="checkedAll">
-                        <span class="bold-smaller">Todas las estrellas</span>
-                    </li>
-                    <li *ngFor="let item of startslList">
-                        <span class="fa checked">
-                            <input id={{item.stars.length}} type="checkbox" value="{{item.id}}" (change)="checkStars($event.target.value, $event.target.checked)"
-                                [checked]=" item.checked == true " class="checkedBox">
-                        </span>
-                        <span *ngFor="let itemStar of item.stars" class="fa fa-star checked spanStar"></span>
-                    </li>
-                </ul>
+                        <li>
+                            <input type="checkbox" (change)="checkAllStars($event.target.checked)" [(ngModel)]="checkedAll" [checked]="checkedAll">
+                            <span class="bold-smaller">Todas las estrellas</span>
+                        </li>
+                        <li *ngFor="let item of startslList">
+                            <span class="fa checked">
+                                <input id={{item.stars.length}} type="checkbox" value="{{item.id}}" (change)="checkStars($event.target.value, $event.target.checked)"
+                                    [checked]=" item.checked == true " class="checkedBox">
+                            </span>
+                            <span *ngFor="let itemStar of item.stars" class="fa fa-star checked spanStar"></span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

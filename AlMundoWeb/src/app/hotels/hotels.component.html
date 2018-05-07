@@ -1,11 +1,8 @@
 <div class="container">
-    <div class="row">
-
-            <filter></filter>
-
-        
-        <div class="col-xs-9">
-            <hotel *ngFor="let item of hotelList" [hotelItem]="item"></hotel>
-        </div>
+    <div class="col-xs-12 col-md-3">
+        <filter></filter>
+    </div>
+    <div class="col-xs-12 col-md-9">
+        <hotel *ngFor="let item of hotelList" [hotelItem]="item"></hotel>
     </div>
 </div>

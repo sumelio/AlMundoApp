@@ -4,18 +4,14 @@
     padding: 15px;
 }
 
-.button {
-    background-color: #192877;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: small;
-    margin: 2px 2px;
-    cursor: pointer;
-    border-radius: 2px;
-    font-weight: bold;
-    box-shadow: 0 1px black;
+
+
+.bacgroundPage { 
+    align-items: center; 
+
+    background-color: #FAFAFA;
+}
+
+.bacgroundBody { 
+    background-color: #FAFAFA; 
 }

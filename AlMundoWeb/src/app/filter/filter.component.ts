@@ -13,7 +13,7 @@ export class FilterComponent implements OnInit {
   name;
   startslList = [];
   checkedAll;
-  showFilterName = false;
+  showFilterName = true;
   showFilterStar = true;
   
 
