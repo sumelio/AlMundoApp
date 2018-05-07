@@ -8,9 +8,15 @@ Esta aplicación esta compuesta de dos componentes:
 - **Component Filter**: Contiene el html que permite realizar la búqueda o filtrado del listado de hoteles por nombre y cantidad de estreñas del hotel.
 
 ##¿Como ejecutar esta aplicación?
+### Requisitos de instalación
 
-# AlMundoRestAPI
+- Tener instalado:
+1. nodeJS en la versión: v8.11.1
+2. CLI de Angular version 5.
+
+### AlMundoRestAPI
 Para subir el servidor en NodeJS realizar los siguientes pasos:
+
 
 1. Ingresar a la carpeta AlMundoRestAPI
 
@@ -39,7 +45,7 @@ Server AlMundoAPI is up on port 3000 ....
 
 ```
 
-# AlMundoWeb
+### AlMundoWeb
 Para subir la aplicación en Angular realizar los siguientes pasos:
 
 1. Ingresar a la carpeta AlMundoRestAPI
