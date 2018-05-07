@@ -1,3 +1,4 @@
+
 .starFilter {
     color: #2F76B1;
     font-weight: bold;
@@ -59,6 +60,7 @@
     padding-left: 10px;
     color:  #2F76B1; 
     font-size: medium;
+    cursor: pointer;
     
 }
 
@@ -96,12 +98,53 @@ ul{
     background-color: white;
     font-weight: bold;
   }
+
+  .filterTop {
+    margin-top: 20px;
+}
   
   .checked {
     color: #f8bb00;
 }
 
+.filterResponse {
+    display: none;
+
+}
+
+.center {
+
+    text-align: center;
+}
 
 @media screen and (max-width: 800px) {
+    .filterBorder {
+        margin: 10px 0px;
+      }
 
+      .filterTop {
+        margin-top: 0px;
+    }
+
+      .filterTitle {
+        display: none;
+      }
+
+      .filterResponse {
+          display: inline;
+          color:  #2F76B1; 
+          cursor: pointer;
+      }
+
+
+
+
+      .filterBorder {
+        box-shadow:none ;
+        margin-bottom: 0px;
+        width: 100%;       
+        padding: 0px;
+        background-color: none;
+        font-weight: bold;
+      }
 }

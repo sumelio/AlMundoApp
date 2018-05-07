@@ -15,6 +15,7 @@ export class FilterComponent implements OnInit {
   checkedAll;
   showFilterName = true;
   showFilterStar = true;
+  showFilterAll = false;
   
 
   constructor(private hotelsComponent : HotelsComponent) {
@@ -24,6 +25,10 @@ export class FilterComponent implements OnInit {
 
   ngOnInit() {
     this.createFilterStar()
+
+    if (window.screen.width >= 800) { // 768px portrait
+      this.showFilterAll = false;
+    }
   }
 
 
@@ -78,6 +83,10 @@ export class FilterComponent implements OnInit {
 
   toggleFilterStar() {
     this.showFilterStar = !this.showFilterStar;
+  }
+
+  toggleFilterAll() {
+    this.showFilterAll = !this.showFilterAll;
   }
 
   
