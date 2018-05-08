@@ -126,10 +126,12 @@ ng build --prod
 
 La página ahora debe estar disponible por el puerto 4200 http://localhost:4200/ :
 
-Desktop
+*Desktop*
+
 ![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)
  
 
-Mobile
+*Mobile*
+
 ![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)
  
