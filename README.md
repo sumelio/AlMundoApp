@@ -1,8 +1,8 @@
 # AlMundoApp
 
 Esta aplicación esta compuesta de dos componentes:
-1. AlMundoRestAPI: Es un servicio el cual expone una API Rest que permite consultar la información de algunos hoteles, permitiendo realizar la búsqueda por nombre y cantidad de estrellas.
-2. AlMundoWeb: Es un proyecto en Angular 5 que contiene toda la parte de frontend de la aplicación y tiene tres componente:
+1. **AlMundoRestAPI**: Es un servicio en *NodeJS* con  *express* el cual expone una API Rest que permite consultar la información de algunos hoteles, permitiendo realizar la búsqueda por nombre y cantidad de estrellas.
+2. **AlMundoWeb**: Es un proyecto en Angular 5 que contiene toda la parte de frontend de la aplicación y tiene tres componente:
 - **Componente Hotels** : El cual se comunica con el **HotelService** para consultar el RestAPI (*AlMundoRestAPI*) y luego realiza el pintado de cada uno de los componentes Hotel.
 - **Componente Hotel**: Contiene el detalle del hotel, es decir, una imagen, nombre cantidad de estreñas, amenities y precio.
 - **Componente Filter**: Contiene el html que permite realizar la búqueda o filtrado del listado de hoteles por nombre y cantidad de estrllas del hotel.
@@ -11,8 +11,8 @@ Esta aplicación esta compuesta de dos componentes:
 ### Requisitos de instalación
 
 - Tener instalado:
-1. nodeJS en la versión: v8.11.1 o superior.
-2. Tene instalado npm.
+1. NodeJS en la versión: v8.11.1 o superior.
+2. Tene instalado *npm*.
 
 ### AlMundoRestAPI
 Para subir el servidor en NodeJS realizar los siguientes pasos:
@@ -109,8 +109,6 @@ En la consola debe aparecer este mensaje:
 ```bash 
 > al-mundo-web@0.0.0 start /home/..../AlMundoWeb
 > ng serve
-
-
 ....
 ....
 chunk {styles} styles.bundle.js (styles) 365 kB [initial] [rendered]
@@ -120,13 +118,18 @@ webpack: Compiled successfully.
 
 
 ```
+Para generar el **dist** para producción ejecutar el siguiente comando: 
+
+```bash 
+ng build --prod
+```
 
 La página ahora debe estar disponible por el puerto 4200 http://localhost:4200/ :
 
-
+Desktop
 ![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)
  
 
-
+Mobile
 ![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)
  
