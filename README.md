@@ -4,10 +4,12 @@ Esta aplicación esta compuesta de dos componentes:
 1. **AlMundoRestAPI**: Es un servicio en *NodeJS* con  *express* el cual expone una API Rest que permite consultar la información de algunos hoteles, permitiendo realizar la búsqueda por nombre y cantidad de estrellas.
 2. **AlMundoWeb**: Es un proyecto en Angular 5 que contiene toda la parte de frontend de la aplicación y tiene tres componente:
 - **Componente Hotels** : El cual se comunica con el **HotelService** para consultar el RestAPI (*AlMundoRestAPI*) y luego realiza el pintado de cada uno de los componentes Hotel.
-- **Componente Hotel**: Contiene el detalle del hotel, es decir, una imagen, nombre cantidad de estreñas, amenities y precio.
-- **Componente Filter**: Contiene el html que permite realizar la búqueda o filtrado del listado de hoteles por nombre y cantidad de estrllas del hotel.
+- **Componente Hotel**: Contiene el detalle del hotel, es decir, una imagen, nombre, cantidad de estreñas, amenities y precio del hotel.
+- **Componente Filter**: Contiene los filtros para realizar la búsqueda búqueda de hoteles por nombre y cantidad de estrllas del hotel.
 
-##¿Como ejecutar esta aplicación?
+
+## ¿Como ejecutar esta aplicación?
+
 ### Requisitos de instalación
 
 - Tener instalado:
