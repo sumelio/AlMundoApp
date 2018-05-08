@@ -17,10 +17,8 @@ export class FilterComponent implements OnInit {
   showFilterStar = true;
   showFilterAll = false;
   
-
   constructor(private hotelsComponent : HotelsComponent) {
     this.checkedAll = true;
-
    }
 
   ngOnInit() {
@@ -31,13 +29,9 @@ export class FilterComponent implements OnInit {
     }
   }
 
-
   onKeyFindHotelByName() {
     this.hotelsComponent.findHotels(this.findHotelName, this.findStar);    
   }
-
-
-
   checkStars(id: string, checked: boolean) {
     this.checkedAll = false;
     this.startslList[id].checked = checked;
@@ -50,8 +44,6 @@ export class FilterComponent implements OnInit {
      }
      this.hotelsComponent.findHotels(this.findHotelName, this.findStar);    
   }
-
-
   createFilterStar() {
     var ids =  0;
     for (var i = 5; i > 0; i--) { 
@@ -63,8 +55,6 @@ export class FilterComponent implements OnInit {
       this.startslList.push(obj) ;
    }
   }
-
-
   checkAllStars(checked :boolean){ 
     if(checked) {
     for(var i = 0; i < this.startslList.length; i++) {
@@ -75,8 +65,8 @@ export class FilterComponent implements OnInit {
     }else {
         console.log("Not star all checked")
     }
-
   }
+  
   toggleFilterName() {
     this.showFilterName = !this.showFilterName;
   }
@@ -87,7 +77,5 @@ export class FilterComponent implements OnInit {
 
   toggleFilterAll() {
     this.showFilterAll = !this.showFilterAll;
-  }
-
-  
+  }  
 }

@@ -21,7 +21,6 @@ export class HotelsComponent implements OnInit {
     console.log(`findHotelName ${test}` )
   }
 */
-
   findHotels(findHotelName: string, findStar: string) {
     this.hotelsService.getHotels(findHotelName, findStar)
     .subscribe(
@@ -29,9 +28,4 @@ export class HotelsComponent implements OnInit {
       (error)  => console.log("error=" + error)
     );
   }
-
-
-
-
-
 }
