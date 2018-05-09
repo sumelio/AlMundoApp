@@ -48,6 +48,12 @@ Si queremos filtrar por stars y nombre:
 db.getCollection('collectionHotels').find( { "stars": { $in: [1,5] } , "name" : {'$regex' : '1', '$options' : 'i'}  } )  
 
 
+Instalar drive
+
+```bash
+npm install mongodb --save
+```
+
 ### AlMundoRestAPI
 Para subir el servidor en NodeJS realizar los siguientes pasos:
 
