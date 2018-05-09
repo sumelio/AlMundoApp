@@ -15,6 +15,38 @@ Esta aplicación esta compuesta de dos componentes:
 - Tener instalado:
 1. NodeJS en la versión: v8.11.1 o superior.
 2. Tene instalado *npm*.
+3. Tener instalado *mongoDB*.
+
+
+### Almacenar los hoteles en la bd de mongo
+
+1. Ejecutar el siguiente comando
+```bash
+mongoimport --db dbAlMundo --collection collectionHotels --file [PATH_PROJECT ]]/AlMundoRestAPI/data/data.json --jsonArray
+```
+El resultado de este comando debe ser:
+
+```bash
+	connected to: localhost
+	imported 100 documents
+```
+
+Se puede validar que la información esta almacenada con el siguiente comando:
+
+```bash
+$ mongo dbAlMundo
+```
+
+Y consultar la colección:
+
+```mongo
+> db.getCollection('collectionHotels').find({})
+```
+
+Si queremos filtrar por stars y nombre:
+
+db.getCollection('collectionHotels').find( { "stars": { $in: [1,5] } , "name" : {'$regex' : '1', '$options' : 'i'}  } )  
+
 
 ### AlMundoRestAPI
 Para subir el servidor en NodeJS realizar los siguientes pasos:
@@ -22,24 +54,24 @@ Para subir el servidor en NodeJS realizar los siguientes pasos:
 
 1. Ingresar a la carpeta AlMundoRestAPI
 
-```bash 
+```bash
 /AlMundoRestAPI
 ```
 2. Ejecutar la instalación de las dependencias del proyecto:
 
-```bash 
+```bash
 $npm install
 ```
 
 3. Iniciar el servidor express de nodeJS:
 
-```bash 
+```bash
 $npm start
 ```
 
 En la consola debe aparecer este mensaje:
 
-```bash 
+```bash
 > almundorestapi@1.0.0 start .../AlMundoRestAPI
 > node server.js
 
@@ -53,7 +85,7 @@ http://localhost:3000/almundo/hotels?name=L&stars='2,5'
 
 Respuesta:
 
-```json 
+```json
 [
    {
       "id":"266914",
@@ -91,24 +123,24 @@ Para subir la aplicación en Angular realizar los siguientes pasos:
 
 1. Ingresar a la carpeta AlMundoWeb
 
-```bash 
+```bash
 /AlMundoWeb
 ```
 2. Ejecutar la instalación de las dependencias del proyecto:
 
-```bash 
+```bash
 $npm install
 ```
 
 3. Iniciar el servidor ng serve:
 
-```bash 
+```bash
 $npm start
 ```
 
 En la consola debe aparecer este mensaje:
 
-```bash 
+```bash
 > al-mundo-web@0.0.0 start /home/..../AlMundoWeb
 > ng serve
 ....
@@ -120,9 +152,9 @@ webpack: Compiled successfully.
 
 
 ```
-Para generar el **dist** para producción ejecutar el siguiente comando: 
+Para generar el **dist** para producción ejecutar el siguiente comando:
 
-```bash 
+```bash
 ng build --prod
 ```
 
@@ -131,9 +163,8 @@ La página ahora debe estar disponible por el puerto 4200 http://localhost:4200/
 *Desktop*
 
 ![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)
- 
+
 
 *Mobile*
 
 ![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)
- 
