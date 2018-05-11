@@ -45,13 +45,21 @@ Y consultar la colección:
 
 Si queremos filtrar por stars y nombre:
 
-db.getCollection('collectionHotels').find( { "stars": { $in: [1,5] } , "name" : {'$regex' : '1', '$options' : 'i'}  } )  
+db.getCollection('collection_hotels').find( { "stars": { $in: [1,5] } , "name" : {'$regex' : '1', '$options' : 'i'}  } )  
 
 
 Instalar drive
 
 ```bash
 npm install mongodb --save
+```
+
+```bash
+npm install mongoose@5.1.0 --save
+```
+
+```bash
+npm install body-parser@1.18.2 --save
 ```
 
 ### AlMundoRestAPI

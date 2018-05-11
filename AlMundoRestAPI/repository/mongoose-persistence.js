@@ -6,14 +6,14 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect(MONGO_DB_CONNECTION + 'dbAlMundo');
 
-var hotelModel = mongoose.model("'collectionHotels'", {
+var hotelModel = mongoose.model("collectionHotels", {
      
-    "id": { type: Number },
-    "name": {type: String},
-    "stars": {type: Number},
-    "price": {type: Number},
-    "image": {type: String},
-    "amenities": { type: [] }
+    "id": { type: Number, required: true, minlength: 1 },
+    "name": {type: String, required: true, minlength: 1, trim: true },
+    "stars": {type: Number, required: true, minlength:1 },
+    "price": {type: Number, required: true, minlength: 1 },
+    "image": {type: String, required: true, minlength: 1, trim: true },
+    "amenities": { type: [], required: true, minlength: 1 }
 });
 
 var newHotel = new hotelModel({
@@ -31,8 +31,22 @@ var newHotel = new hotelModel({
   ]
 });
 
-newHotel.save().then((doc) => {
-    console.log('Saved hotel ', doc);
-}, (e) => {
-    console.log('Unable to save hotel');
-})
+
+// newHotel.save().then((doc) => {
+//     console.log('Saved hotel ', doc);
+// }, (e) => {
+//     console.log('Unable to save hotel');
+// })
+
+
+hotelModel.findOneAndUpdate({ "id" :  111 }, 
+                            { $set: { "name": 'MyNotel11111111'  }},
+                            { upsert: true },
+                        (err, doc) => {
+                            if(err) {
+                                console.log(err);
+                            } else {
+                                console.log(doc);
+                            }
+                            
+                        });
