@@ -1,5 +1,5 @@
 var {mongoose} = require('../db/mongoose');
-var {HotelModel} = require('../modules/HotelModel');
+var {HotelModel} = require('../modules/hotelModel');
 
 const fs = require('fs');
 
@@ -16,11 +16,12 @@ var fetchHotels = () => {
 };
 
 var getHotelByNameAndStars = (name, stars) => {
-  return fetchHotels().filter(  hotel =>
-                                  (     ( isEmpty(name)  || hotel.name.toUpperCase().startsWith(name.toUpperCase()) )
-                                    &&  ( isEmpty(stars) || (stars).includes(hotel.stars) )
-                                  )
-                        );
+  return fetchHotels()
+     .filter(  hotel =>
+                (     ( isEmpty(name)  || hotel.name.toUpperCase().startsWith(name.toUpperCase()) )
+                  &&  ( isEmpty(stars) || (stars).includes(hotel.stars) )
+                )
+      );
 };
 
 function isEmpty(param) {
@@ -28,25 +29,22 @@ function isEmpty(param) {
 };
 
 
-// var getHotelByNameAndStars2 = (name, stars) => {
-//   return db.getConnection().collection('collectionHotels')
-//             .find( { "stars": { $in: num } ,
-//                      "name" : {'$regex' : '1', '$options' : 'i'}  } ).toArray()
-//             .then((docs) =>
-//               {
-//                  console.log(" list " + JSON.stringify(docs, undefined, 2) );
-//                }, (err) => {
-//                  console.log('Error ' + err);
-//                }
 
-//               );
+var getHotel = (body, res) => {
+  
 
-// }
+  HotelModel.findOne({ name: 'borne' }, function (err, doc) {
+    if (err) ..
+    doc.name = 'jason bourne';
+    doc.save(callback);
+  })
+ 
+}; 
 
-
-var persistHotel = (body, res) => {
-
+var createHotel = (body, res) => {
+  
     var newHotel = new HotelModel({
+          "_id" :  body.id,
           "id" :  body.id,
           "name": body.name,
           "stars" : body.stars,
@@ -57,37 +55,59 @@ var persistHotel = (body, res) => {
 
 
    newHotel.save().then((doc) => {
-            console.log('Saved hotel ', doc);
             res.send(doc);
           }, (e) => {
-            console.log('Unable to save hotel'); 
+            console.log('Unable to save hotel' + e ); 
             res.status(400).send(e);
           });
-
-
-  // HotelModel.findOneAndUpdate({ "id" :  body.id }, 
-  //       { $set:  {  "id" :  body.id,
-  //         "name": body.name,
-  //         "stars" : body.stars,
-  //         "price" : body.price,
-  //         "image" : body.image,
-  //         "amenities" : body.amenities}
-  //       },
-  //         { upsert: true },
-  //     (err, doc) => {
-  //         if(err) {
-  //           res.status(400).send(err);
-  //         } else {
-  //           res.send(doc);
-  //         }
+};
+var updateHotel = (body, res) => {
+      HotelModel.findOneAndUpdate(
+        { "_id": body.id },
+        {
+          $set: {
+            "id": body.id,
+            "_id": body.id,
+            "name": body.name,
+            "price": body.price,
+            "stars": body.stars,
+            "image": body.image,
+            "amenities": body.amenities
+          }
+        },
+        {new : true, upsert : true},
+        ( err, doc) => {
           
-  //     });
-
+          if (err) {
+            console.log("Error > " + err);
+            res.status(400).send(err);
+            
+          } else {
+            res.send(doc);
+          }
+        });
 }
 
+
+var deleteHotel = (body, res) => {
+      HotelModel.findOneAndRemove(
+        { "_id": body.id },
+        ( err, doc) => {
+          
+          if (err) {
+            console.log("Error > " + err);
+            res.status(400).send(err);
+          } else {
+            res.send(doc);
+          }
+        });
+}
 module.exports = {
   getHotelByNameAndStars,
-  persistHotel
+  createHotel,
+  updateHotel,
+  deleteHotel,
+  getHotel
 };
 
 

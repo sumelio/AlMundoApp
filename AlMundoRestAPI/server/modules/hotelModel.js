@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
-var HotelModel = mongoose.model("collectionHotels", {
+var HotelModel = mongoose.model("collection_hotels", {
     
+   "_id": { type: Number, required: true, minlength: 1 },
    "id": { type: Number, required: true, minlength: 1 },
    "name": {type: String, required: true, minlength: 1, trim: true },
    "stars": {type: Number, required: true, minlength:1 },

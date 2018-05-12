@@ -1,36 +1,38 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 
-const hotelService = require('./services/hotelServices.js');
+const hotelService = require('./services/hotelServices');
 const cors = require('cors');
 
-
 var app = express();
-
-
 
 app.use(cors());
 app.use(bodyParser.json());
 
-
 var PORT_NODE_SERVER = process.env.PORT_NODE_SERVER || 3000;
 
-//Register Get method
+//Register GET method
 app.get('/almundo/hotels', (req,res) => {
-  console.log(' req.query.name ' + req.query.name )
-  console.log(' req.query.stars ' + req.query.stars )
-
-  //var contents = hotelService.getHotelByName("Maria Angola Hotel & Centro de Convenciones");
   var contents = hotelService.getHotelByNameAndStars(req.query.name, req.query.stars);
   res.send(contents);
 });
 
-
+//Register POST method
 app.post('/almundo/hotel', (req,res) => {
-    hotelService.persistHotel(req.body, res);
+   hotelService.createHotel(req.body, res);
 })
 
+//Register PATCH method
+app.patch('/almundo/hotel', (req,res) => {
+  hotelService.updateHotel(req.body, res);
+})
 
+//Register Delete method
+app.delete('/almundo/hotel', (req,res) => {
+  hotelService.deleteHotel(req.body, res);
+})
+
+//Register Default response
 app.get('/', (req, res) => {
  res.send({
    errorMessage: 'Unable to handle request'
@@ -40,3 +42,5 @@ app.get('/', (req, res) => {
 app.listen(PORT_NODE_SERVER, () => {
   console.log( `Server AlMundoAPI is up on port ${PORT_NODE_SERVER} ....`)
 });
+
+module.exports = { app };
