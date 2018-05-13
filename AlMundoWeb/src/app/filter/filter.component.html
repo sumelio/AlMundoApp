@@ -34,8 +34,8 @@
                     </div>
                 </div>
                 <div *ngIf=" showFilterName == true " class="row padding-5">
-                    <input type="text" class="hotelByName"  [(ngModel)]="findHotelName" placeholder="Ingrese el nombre del hotel">
-                    <input type="button" class="button" (click)="onClickFindHotelByName()" value="Aceptar">
+                    <input  class="hotelByName"  [(ngModel)]="findHotelName" placeholder="Ingrese el nombre del hotel">
+                    <input type="button" class="buttonFilter" (click)="onClickFindHotelByName()" value="Aceptar">
                 </div>
             </div>
             <div *ngIf=" showFilterAll == true " class="filterBorder">
@@ -90,8 +90,8 @@
                     </div>
                 </div>
                 <div *ngIf=" showFilterName == true " class="row padding-5">
-                    <input type="text" class="hotelByName" (keyup)="onKeyFindHotelByName()" [(ngModel)]="findHotelName" placeholder="Ingrese el nombre del hotel">
-                    <input type="button" class="button" (click)="onKeyFindHotelByName()" value="Aceptar">
+                    <input type="text" class="hotelByName"  [(ngModel)]="findHotelName" placeholder="Ingrese el nombre del hotel">
+                    <input type="button" class="buttonFilter" (click)="onClickFindHotelByName()" value="Aceptar">
                 </div>
             </div>
             <div class="filterBorder">

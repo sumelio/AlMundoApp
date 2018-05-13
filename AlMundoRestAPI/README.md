@@ -14,3 +14,8 @@ For test
 
 npm i expect mocha supertest
 
+
+
+
+npm run test.watch
+

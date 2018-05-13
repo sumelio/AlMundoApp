@@ -7,14 +7,50 @@ const { HotelModel } = require('./../modules/hotelModel');
 
 const { HotelService } = require('./../services/hotelServices');
 
+const fakeHotels = [
+    {  
+        "id" :  1,
+        "_id" :  1,
+        "name": "A",
+        "stars" : 5,
+        "price" : 12424.2,
+        "image" : "imag1111.png",
+        "amenities" : [
+          "safety-box",
+          "nightclub",
+          "deep-soaking-bathtub",
+          "beach",
+          "business-center"
+      ]
+  },
+  {  
+    "id" :  2,
+    "_id" :  2,
+    "name": "B",
+    "stars" : 5,
+    "price" : 12424.2,
+    "image" : "imag1111.png",
+    "amenities" : [
+      "safety-box",
+      "nightclub",
+      "deep-soaking-bathtub",
+      "beach",
+      "business-center"
+  ]
+}
+]
+
 beforeEach((done) => {
-    HotelModel.remove({}).then(() => done());
+    HotelModel.remove({}).then(() => {
+        HotelModel.insertMany(fakeHotels);
+    }).then(() => done());
 });
 
 describe('POST / Hotels', () => {
     it('Should create a new Hotel', (done) => {
         var req ={  
               "id" :  12345,
+              "_id" :  12345,
               "name": "Fredoooooooo",
               "stars" : 5,
               "price" : 12424.2,
@@ -45,7 +81,7 @@ describe('POST / Hotels', () => {
                     return done(err);
                 }
 
-                HotelModel.find().then((hotel) => {
+                HotelModel.find(req).then((hotel) => {
                     expect(hotel.length).toBe(1);
                     expect(hotel[0].id).toBe(req.id);
                     expect(hotel[0].id).toBe(req.id);
@@ -70,7 +106,7 @@ describe('POST / Hotels', () => {
                 }
 
                 HotelModel.find().then((hotel) => {
-                    expect(hotel.length).toBe(0);
+                    expect(hotel.length).toBe(2);
                     done();
                 }).catch((e) => done(e));
             });
@@ -113,7 +149,7 @@ describe('PATCH / Hotels', () => {
                     return done(err);
                 }
 
-                HotelModel.find().then((hotel) => {
+                HotelModel.find(req).then((hotel) => {
                     expect(hotel.length).toBe(1);
                     expect(hotel[0].id).toBe(req.id);
                     expect((hotel[0].id)).toBe(req.id);
@@ -170,7 +206,7 @@ describe('DELETE / Hotels', () => {
                         return done(err);
                     }
 
-                    HotelModel.find().then((hotel) => {
+                    HotelModel.find(req).then((hotel) => {
                         expect(hotel.length).toBe(0);
                         done();
                     }).catch((e) => done(e));

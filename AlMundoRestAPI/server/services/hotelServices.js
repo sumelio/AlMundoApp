@@ -132,7 +132,6 @@ function initDataBase() {
 
 
         newHotel.save().then((doc) => {
-          console.log(doc);
         }, (e) => {
           console.log('Unable to save hotel' + e);
         });
