@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelsComponent } from '../hotels/hotels.component';
+import { MainComponent } from '../main/main.component';
 
 @Component({
   selector: 'filter',
@@ -17,7 +17,7 @@ export class FilterComponent implements OnInit {
   showFilterStar = true;
   showFilterAll = false;
   
-  constructor(private hotelsComponent : HotelsComponent) {
+  constructor(private mainComponent : MainComponent) {
     this.checkedAll = true;
    }
 
@@ -29,8 +29,8 @@ export class FilterComponent implements OnInit {
     }
   }
 
-  onKeyFindHotelByName() {
-    this.hotelsComponent.findHotels(this.findHotelName, this.findStar);    
+  onClickFindHotelByName() {
+    this.mainComponent.findHotels(this.findHotelName, this.findStar);    
   }
   checkStars(id: string, checked: boolean) {
     this.checkedAll = false;
@@ -42,7 +42,7 @@ export class FilterComponent implements OnInit {
         this.findStar = this.startslList[i].stars.length + "," + this.findStar;
        }       
      }
-     this.hotelsComponent.findHotels(this.findHotelName, this.findStar);    
+     this.mainComponent.findHotels(this.findHotelName, this.findStar);    
   }
   createFilterStar() {
     var ids =  0;
@@ -61,7 +61,7 @@ export class FilterComponent implements OnInit {
       this.startslList[i].checked = false;
      }
      this.findStar = "";
-     this.hotelsComponent.findHotels(this.findHotelName, this.findStar);
+     this.mainComponent.findHotels(this.findHotelName, this.findStar);
     }else {
         console.log("Not star all checked")
     }

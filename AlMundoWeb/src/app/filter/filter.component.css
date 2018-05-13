@@ -10,10 +10,7 @@
 }
 .padding-5 {
     padding: 8px 10px 15px 5px;
-}
-.padding-6 {
-    padding: 8px 8px 15px 7px;
-}
+} 
 .button {
     background-color: #192877;
     border: none;
@@ -62,6 +59,12 @@ li{
     padding: 3px;
     font-size: smaller;
 }
+
+span
+{
+    vertical-align: middle;
+    line-height: 14px;
+}
 .padding-left0 {
     padding-left: 0px;
 }
@@ -101,6 +104,8 @@ li{
         display: inline;
         color: #2F76B1;
         cursor: pointer;
+        padding: 14px 0px 14px;
+        background-color: white;
    }
     .filterBorder {
         box-shadow:none ;
