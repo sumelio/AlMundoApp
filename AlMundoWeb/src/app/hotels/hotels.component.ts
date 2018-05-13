@@ -13,7 +13,7 @@ export class HotelsComponent implements OnInit {
   constructor(private hotelsService: HotelsService) {}
 
   ngOnInit() {
-    this.findHotels(null , null)
+    this.findHotels("" , "")
   }
 /*
   onKey(event: Event) {

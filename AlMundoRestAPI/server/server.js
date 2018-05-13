@@ -12,9 +12,14 @@ app.use(bodyParser.json());
 var PORT_NODE_SERVER = process.env.PORT_NODE_SERVER || 3000;
 
 //Register GET method
-app.get('/almundo/hotels', (req,res) => {
-  var contents = hotelService.getHotelByNameAndStars(req.query.name, req.query.stars);
-  res.send(contents);
+app.get('/almundo/hotel', (req,res) => {
+  //var contents = hotelService.getHotelByNameAndStars(req.query.name, req.query.stars);
+  //res.send(contents);
+   if(req.query.name || req.query.stars ) {
+     hotelService.getHotel(req.query.name, req.query.stars, res);
+   }else {
+    hotelService.getHotelAll(res);
+   }
 });
 
 //Register POST method

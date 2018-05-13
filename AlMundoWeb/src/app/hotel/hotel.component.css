@@ -12,7 +12,6 @@
     width: 100%;
     padding: 0px 5px;
     max-height: 180px;
-    max-width: 270px;
 }
 .magenDots {
     border-left-style: dashed;
@@ -43,15 +42,32 @@
 }
 .labelOragen {
     color: #DA6700;
-    font-size: large;
+    font-size: small;
+    padding-right: 5px;
+    padding: 3px 5px;
 }
 .priceOragen {
     color: #DA6700;
     font-size: x-large;
     font-weight: bold;
+    text-align: left;
 }
 .center {
     text-align: center;
+}
+.center1 {
+    height: 40px;
+    text-align: center;
+    line-height:40px;
+}
+.priceContainer1{
+    width: 100%;
+    height: 40px;
+    padding: 0px 20%;
+    line-height:40px;
+}
+.center1 p{
+    float: left;
 }
 .margen-hotel {
     padding: 10px;

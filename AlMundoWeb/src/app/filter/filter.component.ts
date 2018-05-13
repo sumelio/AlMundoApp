@@ -8,8 +8,8 @@ import { HotelsComponent } from '../hotels/hotels.component';
 })
 export class FilterComponent implements OnInit {
 
-  findHotelName;
-  findStar;
+  findHotelName = "";
+  findStar = "";
   name;
   startslList = [];
   checkedAll;
