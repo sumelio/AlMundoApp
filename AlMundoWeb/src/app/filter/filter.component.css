@@ -17,12 +17,12 @@
     border-right: none;
     border-right-color:   #192877;
     color: white;
-    height: 32px;
+    height: 34px;
     margin: none;
     border-bottom-width: 2px;
     border-bottom-color: black;
     border-radius: 2px;
-    border-top-width: 2px;
+    border-top-width: 6px;
     border-top-color:    #192877;
     font-size: small;
 }
