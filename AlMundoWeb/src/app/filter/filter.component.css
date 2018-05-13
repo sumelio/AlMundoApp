@@ -10,46 +10,46 @@
 }
 .padding-5 {
     padding: 8px 10px 15px 5px;
-} 
+}
 .buttonFilter {
-   /* */background-color: #192877;
+    background-color: #192877;
     border-left: none;
     border-right: none;
-    border-right-color:   #192877;
-    color: white;
-    height: 34px;
+    border-right-color: #192877;
+    color: #ffffff;
+    height: 31px;
     margin: none;
     border-bottom-width: 2px;
     border-bottom-color: black;
     border-radius: 2px;
-    border-top-width: 6px;
-    border-top-color:    #192877;
+    border-top-width: 8px;
+    border-top-color: #192877;
     font-size: small;
+    padding-bottom: 4px;
+    
 }
 .hotelByName {
     font-size: small;
     font-weight: normal;
     padding: 1px 8px;
-    height: 28px;
+    height: 27px;
     max-width: 134px;
     margin-left: 10px;
-    margin-right: 10px; 
+    margin-right: 10px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-
-        -webkit-box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        box-sizing: content-box;
-        border: 1px solid #c4c3c3;
-        border-top-width: 2px;
-        border-top-color: rgb(148, 147, 147);
-        border-radius: 2px;
-        background: rgba(252,252,252,1);
-        -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-        -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-        -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-        transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-      
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid #c4c3c3;
+    border-top-width: 2px;
+    border-top-color: rgb(148, 147, 147);
+    border-radius: 2px;
+    background: rgba(252,252,252,1);
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .bold-smaller {
     font-weight: bold;
@@ -71,9 +71,7 @@ li{
     padding: 3px;
     font-size: smaller;
 }
-
-span
-{
+span {
     vertical-align: middle;
     line-height: 14px;
 }
