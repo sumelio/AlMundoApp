@@ -6,7 +6,9 @@ const fs = require('fs');
 var getHotel = (name, stars, res) => {
   var query;
 
-  if (stars.includes(",")) { 
+  if (stars && (stars.includes(",") || stars.length > 0)) { 
+    stars +=",";
+    console.log(stars.split(","));
     query = {
       "stars": { $in:  stars.split(",") }, 
       "name": { '$regex': name, '$options': 'i' }
@@ -117,7 +119,7 @@ function initDataBase() {
 
   console.log('Init dataBase....');
   HotelModel.find().then((hotels) => {
-    if (hotels.length == 0) {
+    if (hotels.length < 3) {
 
       fetchHotels().forEach(function (element) {
         var newHotel = new HotelModel({

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var HotelModel = mongoose.model("collection_hotels", {
+const model = {
     
    "_id": { type: Number, required: true, minlength: 1 },
    "id": { type: Number, required: true, minlength: 1 },
@@ -9,6 +9,8 @@ var HotelModel = mongoose.model("collection_hotels", {
    "price": {type: Number, required: true, minlength: 1 },
    "image": {type: String, required: true, minlength: 1, trim: true },
    "amenities": { type: [], required: true, minlength: 1 }
-});
+}
+
+var HotelModel = mongoose.model("collection_hotels", model ); 
 
 module.exports = {HotelModel};
