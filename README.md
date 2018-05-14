@@ -86,6 +86,7 @@ This web application shows the hotel list:
 
 - NodeJS v8 or later
 - npm.
+- ng-common
 
 1. Enter to AlMundoWeb folder and execute this command:
 
