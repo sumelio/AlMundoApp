@@ -9,13 +9,18 @@ export class HotelsService {
 
     constructor(private http: Http) {}
     getHotels(name :string, stars : string) {
-        return this.http.get( this.url+"/almundo/hotels?name=" + name + "&stars="+ stars)
+        return this.http.get( this.url+"/almundo/hotel?name=" + name + "&stars="+ stars)
         .map(
             (response) => {
                 const data = response.json();
-                for (const hotel of data) {
-                  hotel.image =   "../../assets/images/hotels/" + hotel.image;
-                }
+                // for (const hotel of data) {
+                //   hotel.image =   "../../assets/images/hotels/" + hotel.image;
+                // }
+                data.forEach(element => {
+                    if( ! element.image.includes("http") ) {
+                       element.image =   "../../assets/images/hotels/" + element.image;
+                    }
+                });
                 return data;
             }
         );

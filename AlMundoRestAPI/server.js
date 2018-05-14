@@ -8,7 +8,7 @@ var app = express();
 
 app.use(cors());
 
-var PORT_NODE_SERVER = process.env.PORT_NODE_SERVER || 3000;
+var PORT_NODE_SERVER = process.env.PORT_NODE_SERVER || 8080;
 
 //Register Get method
 app.get('/almundo/hotels', (req,res) => {
