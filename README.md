@@ -102,7 +102,7 @@ $ npm install
 3. Development server:
 
 ```bash
-$ ng serve --port 4200
+$ npm start --port 4200
 ```
 
 *NOTA:*  ```Navigate to http://localhost:4200/```
