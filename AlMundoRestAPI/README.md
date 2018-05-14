@@ -259,12 +259,21 @@ $ set PORT_NODE_SERVER=3000 && npm start
 
 *NOTA:* ```Navigate to http://localhost:3000/```
 
-If you want to change the configuration in order to connect to MongoDB, you can include the settings variable:
+If you want to change the configuration in order to connect to MongoDB, you can include the setting variables:
 
-Example Linux:
+```properties
+NODE_ENV=MyLocalEnv 
+MONGO_DB_CONNECTION=mongodb://[MONGO_SERVER]:[MONGO_PORT]/dbAlMundoTest
+```
+You have to set the [MONGO_SERVER] and [MONGO_PORT].
 
+Linux:
 ```bash
 exports NODE_ENV=MyLocalEnv && exports MONGO_DB_CONNECTION=mongodb://[MONGO_SERVER]:[MONGO_PORT]/dbAlMundoTest set PORT_NODE_SERVER=3000 && npm start
+```
+Windows:
+```bash
+set NODE_ENV=MyLocalEnv && set MONGO_DB_CONNECTION=mongodb://[MONGO_SERVER]:[MONGO_PORT]/dbAlMundoTest set PORT_NODE_SERVER=3000 && npm start
 ```
 
 
