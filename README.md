@@ -51,13 +51,13 @@ This web application shows the hotel list:
 $ npm install
 ```
 
-3. Execute to start angular:
+3. Development server:
 
 ```bash
-$ ng serve
+$ ng serve --port 4200
 ```
 
-*NOTA:* By default the port is 4200 http://localhost:4200
+*NOTA:* By default the port is 4200 ```http://localhost:4200```
 
  [Show detail of AlMaundoWeb (FrontEnd)](../Branch_connect_to_mongoDB/AlMundoWeb/README.md)
 
@@ -92,7 +92,7 @@ This Rest API has four methods:
 $ npm install
 ```
 
-3. Execute to start express server:
+3. Development express server:
 
 Linux
 ```bash
@@ -101,8 +101,8 @@ $ export PORT_NODE_SERVER=3000 && npm start
 Windows
 ```bash
 $ set PORT_NODE_SERVER=3000 && npm start
+```
 
-
-*NOTA:* By default  the port is 3000 http://localhost:3000
+*NOTA:* By default  the port is 3000 ```http://localhost:3000```
 
 [Show detail of AlMundoRestAPI (BackEnd)](../Branch_connect_to_mongoDB/AlMundoRestAPI/README.md)
