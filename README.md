@@ -32,8 +32,6 @@ This web application shows the hotel list:
 |---|---|
 |![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)|![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)|
 
-![https://github.com/sumelio/AlMundoApp/blob/Branch_connect_to_mongoDB/AlMundoWeb/README.md](https://github.com/sumelio/AlMundoApp/blob/Branch_connect_to_mongoDB/AlMundoWeb/README.md)
-
 
 ## How to luanch this app
 
@@ -64,16 +62,16 @@ $ ng serve
 
 ## BackEnd
 
-This rest api has four services:
+This Rest API has four methods:
 
-| Method  | url  | Request  |   |   |
-|---|---|---|---|---|
-| GET  |  /almundo/hotel?name=[name]&stars=[stars] |  name: Hotel name, stars: star numbers|   |   |
-| POST  |  /almundo/hotel |   |   |   |
-| PATH  | /almundo/hotel  |   |   |   |
-| DELETE  |  /almundo/hotel |   |   |   |
+| Method  | url  | Description  |
+|---|---|---|
+| GET  |  /almundo/hotel?name=[name]&stars=[stars] | Get hotels by *name*: Hotel name, *stars*: star numbers|
+| POST  |  /almundo/hotel | Create a hotel  |
+| PATH  | /almundo/hotel  | Update a hotel  |
+| DELETE  |  /almundo/hotel | Remove a hotel  |
 
-## How to luanch this web services:
+## How to launch this web service:
 
 ### Request for installation
 
