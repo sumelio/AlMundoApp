@@ -1,5 +1,5 @@
 var { mongoose } = require('../db/mongoose');
-var { HotelModel } = require('../modules/hotelModel');
+var { HotelModel } = require('../models/hotelModel');
 
 const fs = require('fs');
 

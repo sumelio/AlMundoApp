@@ -3,7 +3,7 @@ const request = require('supertest')
 
 const { app } = require('./../server');
 
-const { HotelModel } = require('./../modules/hotelModel');
+const { HotelModel } = require('./../models/hotelModel');
 
 const { HotelService } = require('./../services/hotelServices');
 
@@ -44,11 +44,6 @@ const fakeHotels = [fakeHotelA];
 
 
 beforeEach((done) => {
-    // HotelModel.remove({}).then(() => {
-    //     HotelModel.insertMany(fakeHotels);
-    // }).then(() => done());
-
-    //HotelModel.remove({}).then(() => done());
 
     HotelModel.findOneAndRemove(
         { "_id": -11 },
