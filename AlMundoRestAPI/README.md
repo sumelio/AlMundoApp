@@ -3,15 +3,15 @@
 
 
 	┌───────────────────────────────────────────────────────────────┐
-	│                          AlMundoRestAPI                       │
+	│                        AlMundoRestAPI                         │
 	│                                                               │
 	│                ┌─────────────────────┐                        │
 	│     HTTP       │       NodeJS        │                        │
 	│                │     (Express)       │                        │
 	│       GET ()---│ ┌─────────────────┐ │                        │
 	│                │ │ server          │ │   ┌───────────────────┐│
-	│      POST ()---│ │  server.js      │ │   │                   ││
-	│                │ │ service         │ │===│      MongoDB      ││
+	│      POST ()---│ │  server.js      │ │   │    (MongoDB)      ││
+	│                │ │ service         │ │===│    dbAlMundo      ││
 	│     PATCH ()---│ │  hotelService.js│ │   │ collection_hotels ││
 	│                │ │ model:          │ │   └───────────────────┘│    
 	│    DELETE ()---│ │  hotelModel     │ │                        │
@@ -252,7 +252,7 @@ $ npm run test-watch
 $ npm start
  ```
 
-This app by default uses port 4200.(http://localhost:4200)
+This app by default uses the port 4200.(http://localhost:4200)
 
 If you want to change the configuration in order to connect to MongoDB, you can include the settings variable:
 
