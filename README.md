@@ -94,9 +94,15 @@ $ npm install
 
 3. Execute to start express server:
 
+Linux
 ```bash
-$ npm start
+$ export PORT_NODE_SERVER=3000 && npm start
 ```
+Windows
+```bash
+$ set PORT_NODE_SERVER=3000 && npm start
+
+
 *NOTA:* By default  the port is 3000 http://localhost:3000
 
 [Show detail of AlMundoRestAPI (BackEnd)](../Branch_connect_to_mongoDB/AlMundoRestAPI/README.md)
