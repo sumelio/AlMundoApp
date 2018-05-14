@@ -33,14 +33,14 @@ This web application shows the hotel list:
 |![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)|![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)|
 
 
-## How to luanch this app
+### How to luanch this app
 
-### Request for installation
+#### Installation requirements
 
-a. NodeJS v8.11.1 or last.
-b. npm.
+- NodeJS v8 or later
+- npm.
 
-1. Enter to AlMundoWeb file and execute this command:
+1. Enter to AlMundoWeb folder and execute this command:
 
 ```bash
 /AlMundoWeb
@@ -51,13 +51,13 @@ b. npm.
 $ npm install
 ```
 
-3. Execute start angular:
+3. Execute to start angular:
 
 ```bash
 $ ng serve
 ```
 
-*NOTA*: By default the port is 4200 http://localhost:4200
+*NOTA: By default the port is 4200 http://localhost:4200 *
 
 
 ## BackEnd
@@ -73,14 +73,14 @@ This Rest API has four methods:
 
 ## How to launch this web service:
 
-### Request for installation
+#### Installation requirements
 
-a. NodeJS v8.11.1 or laster.
-b. npm.
-b. mongoDB.
+- NodeJS v8.11.1 or later.
+- npm.
+- mongoDB.
 
 
-1. Enter to AlMundoRestAPI filder and execute this command:
+1. Enter to AlMundoRestAPI folder and execute this command:
 
 ```bash
 /AlMundoRestAPI
@@ -91,9 +91,9 @@ b. mongoDB.
 $ npm install
 ```
 
-3. Execute to start angular:
+3. Execute to start express server:
 
 ```bash
 $ npm start
 ```
-*NOTA*: By default  the port is 3000 http://localhost:3000
+*NOTA: By default  the port is 3000 http://localhost:3000 *
