@@ -59,7 +59,7 @@ $ ng serve
 
 *NOTA: By default the port is 4200 http://localhost:4200 *
 
- [Show detail of AlMaundoWeb](../Branch_connect_to_mongoDB/AlMundoWeb/README.md)
+ [Show detail of AlMaundoWeb (FontEnd)](../Branch_connect_to_mongoDB/AlMundoWeb/README.md)
 
 ## BackEnd
 
@@ -98,3 +98,5 @@ $ npm install
 $ npm start
 ```
 *NOTA: By default  the port is 3000 http://localhost:3000 *
+
+[Show detail of AlMaundoRestAPI (BackEnd)](../Branch_connect_to_mongoDB/AlMundoRestAPI/README.md)
