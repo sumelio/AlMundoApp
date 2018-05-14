@@ -1,11 +1,45 @@
 # AlMundoApp
 
-Esta aplicación esta compuesta de dos componentes:
-1. **AlMundoRestAPI**: Es un servicio en *NodeJS* con  *express* el cual expone una API Rest que permite consultar la información de algunos hoteles, permitiendo realizar la búsqueda por nombre y cantidad de estrellas.
-2. **AlMundoWeb**: Es un proyecto en Angular 5 que contiene toda la parte de frontend de la aplicación y tiene tres componente:
-- **Componente Hotels** : El cual se comunica con el **HotelService** para consultar el RestAPI (*AlMundoRestAPI*) y luego realiza el pintado de cada uno de los componentes Hotel.
-- **Componente Hotel**: Contiene el detalle del hotel, es decir, una imagen, nombre, cantidad de estreñas, amenities y precio del hotel.
-- **Componente Filter**: Contiene los filtros para realizar la búsqueda búqueda de hoteles por nombre y cantidad de estrllas del hotel.
+This application has two parts: 
+
+- **Frontend**: A web application with Angular 5 called AlMundoWeb.
+- **Backend**: A Rest API service with NodeJS called AlMundoRestAPI.
+
+
+Diagram:
+
+
+	┌───────────────────────────────────────────────────────────────────────┐
+	│                         AlMundoApp                                    │
+	│                                                                       │
+	│  ┌───────────────┐                    ┌───────────────┐               │
+	│  │  AlMundoWeb   │                    │ AlMundoRestAPI│               │
+	│  │  (FrontEnd)   │                    │   (BackEnd)   │               │
+	│  │ ┌───────────┐ │ Resquest  Hotels   │ ┌───────────┐ │   ┌──────────┐│
+	│  │ │ Angular 5 │ │ ───────────────>   │ │ NodeJS    │ │   │          ││
+	│  │ │  Main     │ │                    │ │  Express  │ │===│ MongoDB  ││
+	│  │ │  Hotel    │ │  Response JSON     │ │  Mongoose │ │   │          ││
+	│  │ │  Filter   │ │ <───────────────   │ │  Supertest│ │   │          ││
+	│  │ └───────────┘ │                    │ └───────────┘ │   └──────────┘│
+	│  └───────────────┘                    └───────────────┘               │
+	└───────────────────────────────────────────────────────────────────────┘
+
+## Frontend
+
+This web application shows the hotel list:
+
+
+
+
+
+*Mobile*
+
+
+
+
+|Mobile   | Desktop  |
+|---|---|
+|![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)|![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)|
 
 
 ## ¿Como ejecutar esta aplicación?
