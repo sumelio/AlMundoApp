@@ -91,7 +91,7 @@ b. mongoDB.
 $ npm install
 ```
 
-3. Execute start angular:
+3. Execute to start angular:
 
 ```bash
 $ npm start
