@@ -22,10 +22,10 @@
     border-bottom-width: 2px;
     border-bottom-color: black;
     border-radius: 2px;
-    border-top-width: 8px;
-    border-top-color: #192877;
+    border-top: solid #192877;
+    border-top-width: 9px;
     font-size: small;
-    padding-bottom: 4px;
+    padding: 0px 8px 6px;
     
 }
 .hotelByName {
