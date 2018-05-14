@@ -24,42 +24,6 @@ Diagram:
 	│  └───────────────┘                    └───────────────┘               │
 	└───────────────────────────────────────────────────────────────────────┘
 
-## Frontend
-
-This web application shows the hotel list:
-
-|Mobile   | Desktop  |
-|---|---|
-|![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)|![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)|
-
-
-### How to luanch this app
-
-#### Installation requirements
-
-- NodeJS v8 or later
-- npm.
-
-1. Enter to AlMundoWeb folder and execute this command:
-
-```bash
-/AlMundoWeb
-```
-2. Install modules:
-
-```bash
-$ npm install
-```
-
-3. Development server:
-
-```bash
-$ ng serve --port 4200
-```
-
-*NOTA:* By default the port is 4200 ```http://localhost:4200```
-
- [Show detail of AlMaundoWeb (FrontEnd)](../Branch_connect_to_mongoDB/AlMundoWeb/README.md)
 
 ## BackEnd
 
@@ -103,6 +67,44 @@ Windows
 $ set PORT_NODE_SERVER=3000 && npm start
 ```
 
-*NOTA:* By default  the port is 3000 ```http://localhost:3000```
+*NOTA:* ```Navigate to http://localhost:3000/```
 
 [Show detail of AlMundoRestAPI (BackEnd)](../Branch_connect_to_mongoDB/AlMundoRestAPI/README.md)
+
+## Frontend
+
+This web application shows the hotel list:
+
+|Mobile   | Desktop  |
+|---|---|
+|![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)|![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)|
+
+
+### How to luanch this app
+
+#### Installation requirements
+
+- NodeJS v8 or later
+- npm.
+
+1. Enter to AlMundoWeb folder and execute this command:
+
+```bash
+/AlMundoWeb
+```
+2. Install modules:
+
+```bash
+$ npm install
+```
+
+3. Development server:
+
+```bash
+$ ng serve --port 4200
+```
+
+*NOTA:*  ```Navigate to http://localhost:4200/```
+
+ [Show detail of AlMaundoWeb (FrontEnd)](../Branch_connect_to_mongoDB/AlMundoWeb/README.md)
+
