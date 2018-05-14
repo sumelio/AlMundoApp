@@ -1,29 +1,22 @@
-.header {
-    background-color: #273C7D;
-    height: 80px;
-    padding: 15px;
-}
-
-
-
-.bacgroundPage { 
+.page { 
     align-items: center; 
-
-    background-color: #FAFAFA;
-}
-
-.bacgroundBody { 
     background-color: #FAFAFA; 
 }
 
+.headerSmall {
+    display: none;
+}
+
 @media screen and (max-width: 800px) {
-    .header {
-        background-color: #273C7D;
-        height: 60px;
+    .headerSmall {
+        background-color: #1c2e8a;
+        height: 70px;
         padding: 15px;
+        display: block; 
     }
+
     img {
-        width: 50%
+        width: 50%; 
     }
-    
+ 
 }

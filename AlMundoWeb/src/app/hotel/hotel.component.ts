@@ -6,8 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
     styleUrls: ['./hotel.component.css']
 })
 export class HotelComponent implements OnInit {
- id: number = 10;
- name: string = 'Hotel california'
+ filename : String = '';
 
  @Input() hotelItem;
 

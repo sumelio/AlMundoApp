@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { FilterComponent } from './filter/filter.component';
-import { HotelsComponent } from './hotels/hotels.component';
+import { MainComponent } from './main/main.component';
 import { HotelsService } from './hotels.services';
 
 
@@ -15,7 +15,7 @@ import { HotelsService } from './hotels.services';
     AppComponent,
     HotelComponent,
     FilterComponent,
-    HotelsComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,

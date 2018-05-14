@@ -1,139 +1,111 @@
 # AlMundoApp
 
-Esta aplicación esta compuesta de dos componentes:
-1. **AlMundoRestAPI**: Es un servicio en *NodeJS* con  *express* el cual expone una API Rest que permite consultar la información de algunos hoteles, permitiendo realizar la búsqueda por nombre y cantidad de estrellas.
-2. **AlMundoWeb**: Es un proyecto en Angular 5 que contiene toda la parte de frontend de la aplicación y tiene tres componente:
-- **Componente Hotels** : El cual se comunica con el **HotelService** para consultar el RestAPI (*AlMundoRestAPI*) y luego realiza el pintado de cada uno de los componentes Hotel.
-- **Componente Hotel**: Contiene el detalle del hotel, es decir, una imagen, nombre, cantidad de estreñas, amenities y precio del hotel.
-- **Componente Filter**: Contiene los filtros para realizar la búsqueda búqueda de hoteles por nombre y cantidad de estrllas del hotel.
+This application has two parts: 
+
+- **FrontEnd**: A web application with Angular 5 called AlMundoWeb.
+- **BackEnd**: A Rest API service with NodeJS called AlMundoRestAPI.
 
 
-## ¿Como ejecutar esta aplicación?
-
-### Requisitos de instalación
-
-- Tener instalado:
-1. NodeJS en la versión: v8.11.1 o superior.
-2. Tene instalado *npm*.
-
-### AlMundoRestAPI
-Para subir el servidor en NodeJS realizar los siguientes pasos:
+Diagram:
 
 
-1. Ingresar a la carpeta AlMundoRestAPI
+	┌───────────────────────────────────────────────────────────────────────┐
+	│                            AlMundoApp                                 │
+	│                                                                       │
+	│  ┌───────────────┐                    ┌───────────────┐               │
+	│  │  AlMundoWeb   │                    │ AlMundoRestAPI│               │
+	│  │  (FrontEnd)   │                    │   (BackEnd)   │               │
+	│  │ ┌───────────┐ │ Resquest  Hotels   │ ┌───────────┐ │   ┌──────────┐│
+	│  │ │Angular 5  │ │ ───────────────>   │ │ NodeJS    │ │   │          ││
+	│  │ │ bootstrap │ │                    │ │  Express  │ │===│ MongoDB  ││
+	│  │ │ karma     │ │  Response JSON     │ │  Mongoose │ │   │          ││
+	│  │ │           │ │ <───────────────   │ │  Supertest│ │   │          ││
+	│  │ └───────────┘ │                    │ └───────────┘ │   └──────────┘│
+	│  └───────────────┘                    └───────────────┘               │
+	└───────────────────────────────────────────────────────────────────────┘
 
-```bash 
+
+## BackEnd
+
+This Rest API has four methods:
+
+| Method  | url  | Description  |
+|---|---|---|
+| GET  |  /almundo/hotel?name=[name]&stars=[stars] | Get hotels by *name*: Hotel name, *stars*: star numbers|
+| POST  |  /almundo/hotel | Create a hotel  |
+| PATH  | /almundo/hotel  | Update a hotel  |
+| DELETE  |  /almundo/hotel | Remove a hotel  |
+
+## How to launch this web service:
+
+#### Installation requirements
+
+- NodeJS v8.11.1 or later.
+- npm.
+- mongoDB.
+
+
+1. Enter to AlMundoRestAPI folder and execute this command:
+
+```bash
 /AlMundoRestAPI
 ```
-2. Ejecutar la instalación de las dependencias del proyecto:
+2. Install modules:
 
-```bash 
-$npm install
+```bash
+$ npm install
 ```
 
-3. Iniciar el servidor express de nodeJS:
+3. Development express server:
 
-```bash 
-$npm start
+Linux
+```bash
+$ export PORT_NODE_SERVER=3000 && npm start
+```
+Windows
+```bash
+$ set PORT_NODE_SERVER=3000 && npm start
 ```
 
-En la consola debe aparecer este mensaje:
+*NOTA:* ```Navigate to http://localhost:3000/```
 
-```bash 
-> almundorestapi@1.0.0 start .../AlMundoRestAPI
-> node server.js
+[Show detail of AlMundoRestAPI (BackEnd)](../Branch_connect_to_mongoDB/AlMundoRestAPI/README.md)
 
-Server AlMundoAPI is up on port 3000 ....
+## Frontend
 
-```
+This web application shows the hotel list:
 
-Ejemplo invocación servicio Rest
+|Mobile   | Desktop  |
+|---|---|
+|![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)|![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)|
 
-http://localhost:3000/almundo/hotels?name=L&stars='2,5'
 
-Respuesta:
+### How to luanch this app
 
-```json 
-[
-   {
-      "id":"266914",
-      "name":"LYNIK La Casa de Blanca",
-      "stars":2,
-      "price":676.59,
-      "image":"4846837_5_b.jpg",
-      "amenities":[
-         "deep-soaking-bathtub",
-         "beach-pool-facilities",
-         "bathtub",
-         "separate-bredroom",
-         "kitchen-facilities"
-      ]
-   },
-   {
-      "id":"266900",
-      "name":"La Casa Nostra Hostel",
-      "stars":2,
-      "price":1228.5,
-      "image":"2537805_1_b.jpg",
-      "amenities":[
-         "kitchen-facilities",
-         "fitness-center",
-         "garden",
-         "nightclub",
-         "deep-soaking-bathtub"
-      ]
-   }
-]
-```
+#### Installation requirements
 
-### AlMundoWeb
-Para subir la aplicación en Angular realizar los siguientes pasos:
+- NodeJS v8 or later
+- npm.
+- Angular CLI 
 
-1. Ingresar a la carpeta AlMundoWeb
+1. Enter to AlMundoWeb folder and execute this command:
 
-```bash 
+```bash
 /AlMundoWeb
 ```
-2. Ejecutar la instalación de las dependencias del proyecto:
+2. Install modules:
 
-```bash 
-$npm install
+```bash
+$ npm install
 ```
 
-3. Iniciar el servidor ng serve:
+3. Development server:
 
-```bash 
-$npm start
+```bash
+$ npm start --port 4200
 ```
 
-En la consola debe aparecer este mensaje:
+*NOTA:*  ```Navigate to http://localhost:4200/```
 
-```bash 
-> al-mundo-web@0.0.0 start /home/..../AlMundoWeb
-> ng serve
-....
-....
-chunk {styles} styles.bundle.js (styles) 365 kB [initial] [rendered]
-chunk {vendor} vendor.bundle.js (vendor) 11.1 MB [initial] [rendered]
+ [Show detail of AlMaundoWeb (FrontEnd)](../Branch_connect_to_mongoDB/AlMundoWeb/README.md)
 
-webpack: Compiled successfully.
-
-
-```
-Para generar el **dist** para producción ejecutar el siguiente comando: 
-
-```bash 
-ng build --prod
-```
-
-La página ahora debe estar disponible por el puerto 4200 http://localhost:4200/ :
-
-*Desktop*
-
-![https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/webPage.png)
- 
-
-*Mobile*
-
-![https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png](https://github.com/sumelio/AlMundoApp/blob/master/resources/mobile.png)
- 

@@ -1,10 +1,27 @@
 # AlMundoWeb
 
+
+	┌─────────────────────────────────────────┐
+	│               AlMundoApp                │
+	│        (Angular 5, bootstrap)           │
+	│  ┌────────────────────────────────────┐ │
+	│  │              Main                  │ │
+	│  │           css, htm, js             │ │
+	│  │ ┌───────────────┐ ┌──────────────┐ │ │
+	│  │ │ Filter        │ │ hotel        │ │ │
+	│  │ │ css, htmt,js  │ │  css,html,js │ │ │
+	│  │ └───────────────┘ └──────────────┘ │ │
+	│  └────────────────────────────────────┘ │
+	│  │              service: js           │ │
+	│  └────────────────────────────────────┘ │
+	└─────────────────────────────────────────┘
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Development server
 
-Run `ng serve --port [NUMBER_PORT]` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start --port [NUMBER_PORT]` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
