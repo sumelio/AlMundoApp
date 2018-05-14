@@ -230,7 +230,7 @@ $ npm run test-watch
 $ npm start
  ```
 
-This app run by default uses port 4200.(http://localhost:4200)
+This app runs by default uses port 4200.(http://localhost:4200)
 
 If you want to change configuration in order to connect to MongoDB, you can include the settings variable:
 
