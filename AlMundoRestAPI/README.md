@@ -246,21 +246,25 @@ This API Rest has been built using the following node modules:
 $ npm run test-watch
 ```
 
-4. To start express server:
+4. Development express server:
 
+Linux
 ```bash
-$ npm start
- ```
+$ export PORT_NODE_SERVER=3000 && npm start
+```
+Windows
+```bash
+$ set PORT_NODE_SERVER=3000 && npm start
+```
 
-This app by default uses the port 4200.(http://localhost:4200)
+*NOTA:* ```Navigate to http://localhost:3000/```
 
 If you want to change the configuration in order to connect to MongoDB, you can include the settings variable:
 
 Example Linux:
-```bash
-exports NODE_ENV=MyEnvTest
 
-exports MONGO_DB_CONNECTION=mongodb://192.168.0.18:27017/dbAlMundoTest
+```bash
+exports NODE_ENV=MyLocalEnv && exports MONGO_DB_CONNECTION=mongodb://[MONGO_SERVER]:[MONGO_PORT]/dbAlMundoTest set PORT_NODE_SERVER=3000 && npm start
 ```
 
 
